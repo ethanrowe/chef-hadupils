@@ -13,6 +13,7 @@ action :create do
   converge_by "create hadupils_script at #{new_resource.path}" do
     template new_resource.path do
       source 'script.erb'
+      cookbook 'hadupils'
       owner new_resource.owner if new_resource.owner
       group new_resource.group if new_resource.group
       mode  new_resource.mode if new_resource.mode
